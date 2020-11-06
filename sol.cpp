@@ -13,18 +13,19 @@ int main() {
 	while(t--) {
 		int n;
 		cin >> n;
-		int pos=n, cnt=0, zero=0;
+		int a[n];
+		for(int i=0; i<n; ++i)
+			cin >> a[i];
+		int pos=n, flag=0, z=0;
 		for(int i=0; i<n; ++i) {
-			int a;
-			cin >> a;
-			if(a==0) {
-				if(cnt==0) {
+			if(a[i]==0) {
+				if(flag==0) {
 					pos=i;
-					cnt=1;
+					flag=1;
 				}
-				zero++;
+				z++;
 			}
 		}
-		cout << zero*1000+(n-pos)*100 << "\n";
+		cout << (z*1000)+(n-pos)*100 << "\n";
 	}
 }
